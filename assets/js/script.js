@@ -1,7 +1,7 @@
 // Requirements
 // ------------
 
-// Display the current day at the top of the calender when a user opens the planner.
+// !Display the current day at the top of the calender when a user opens the planner.
 
 // Present time blocks for standard business hours when the user scrolls down.
 
@@ -17,8 +17,6 @@
 // Pseudocode
 // ----------
 
-// function to add today's date in the currentDay tag (once on load)
-
 // function to get data from localStorage and save in a variable for populating time-blocks
 
 // function to render time blocks during work hours, add descriptions and appropriate past/present/future classes for each row
@@ -26,4 +24,9 @@
 // Add event listener to save button clicks for saving hour and description data to localStorage
 
 // Constants for both start and end hours
+
+// Add today's date in the currentDay tag on load
+$(function() {
+  $("#currentDay").text(dayjs().format('dddd, MMMM D'));
+});
 
