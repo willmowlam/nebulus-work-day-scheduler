@@ -61,8 +61,6 @@ function renderTimeBlocks() {
 // Save event to local storage
 function setEvent(hour, description) {
 
-  getEvents();
-
   // Convert hour to numeric
   hour = parseInt(hour, 10);
 
@@ -96,8 +94,8 @@ function setEvent(hour, description) {
 function getEvent(hour){
   
   // Find the hour key in the event array
-  const event = eventData.find(function(event){ 
-    return event.h === hour;
+  let event = eventData.find(function(e) { 
+    return e.h == hour;
   });
 
   // Return the description if the event was found
@@ -118,6 +116,9 @@ $(function() {
 
   // Add today's date in the currentDay tag
   $("#currentDay").text(now.format('dddd, MMMM D'));
+
+  // Read events from local storage
+  getEvents();
 
   // Render time block work hours
   renderTimeBlocks();
