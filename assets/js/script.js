@@ -11,7 +11,7 @@
 
 // !Save the event in local storage when the save button is clicked in that time block.
 
-// Persist events between refreshes of a page
+// !Persist events between refreshes of a page
 
 
 // Set start and end work hours as integers (9 = 9am, 17 = 5pm)
@@ -92,7 +92,7 @@ function setEvent(hour, description) {
 
 // Return a single event read from the event array
 function getEvent(hour){
-  
+
   // Find the hour key in the event array
   let event = eventData.find(function(e) { 
     return e.h == hour;
