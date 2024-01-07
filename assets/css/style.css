@@ -11,6 +11,7 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  border-top: 1px solid white;
 }
 
 header {
@@ -26,6 +27,11 @@ header {
   white-space: pre-wrap;
 }
 
+#time-blocks {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .time-block {
   text-align: center;
   border-radius: 15px;
@@ -34,13 +40,13 @@ header {
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;
 }
 
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  padding: 15px;
 }
 
 .past {
@@ -64,9 +70,25 @@ header {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  cursor: pointer;
+  border-top: 1px solid white;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+.saveBtn:hover {
+  background-color: #02758f;
   transition: all 0.3s ease-in-out;
+}
+
+.saveBtn i{
+  display: block;
+}
+
+@media only screen and (max-width: 575px) {
+  .time-block {
+    border-radius: unset;
+  }
+  .saveBtn {
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+  }
 }
