@@ -68,18 +68,23 @@ function setEvent(hour, description) {
 
   getEvents();
 
-  // Save event data to the array
+  // Convert hour to numeric
+  hour = parseInt(hour, 10);
+
+  // Tidy up the description
   description = description.trim();
  
   // Track if found in array
   let found = false;
   for (let i = 0; i < eventData.length; i++) {
     const el = eventData[i];
-    if (el.h = hour) {
+    const h = parseInt(el.h, 10);
+    if (h === hour) {
       found = true;
       el.d = description;
     }    
   }
+
   // If there was no hour found then push a new value to the array
   if (!found) {
     // Create an event object
@@ -118,10 +123,25 @@ $(function() {
 
   // Add today's date in the currentDay tag
   $("#currentDay").text(now.format('dddd, MMMM D'));
-  setEvent(1,"test");
-  setEvent(1,"new value");
+
   // Render time block work hours
   renderTimeBlocks();
+
+  // Listen for save button click
+  $("#time-blocks").on("click", ".saveBtn", function() {
+
+    // Get hour from parent id eg "hour-12"
+    let h = $(this).parent().attr("id");
+
+    // Get the value of the textarea in the row
+    let d = $(this).siblings(".description").val();
+
+    // Extract the numerical part from the hour using regex
+    h = h.replace(/\D/g, '');
+
+    // Save event
+    setEvent(h, d);
+  });
 
 });
 
