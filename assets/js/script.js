@@ -74,18 +74,24 @@ function setEvent(hour, description) {
     const h = parseInt(el.h, 10);
     if (h === hour) {
       found = true;
-      el.d = description;
+
+      // Save description (if not en empty string)
+      if ("" === description) {
+        eventData.splice(i, 1);
+      } else {
+        el.d = description;
+      }
     }    
   }
 
-  // If there was no hour found then push a new value to the array
-  if (!found) {
+  // If there was no hour found then add a new event to the event array
+  if ((!found) && (description)) {
     // Create an event object
     const event = { h: hour, d: description };
     eventData.push(event);
   }
 
-  // Save the object array to local storage
+  // Save the event object array to local storage
   localStorage.setItem('event-schedule', JSON.stringify(eventData));
    
 }
