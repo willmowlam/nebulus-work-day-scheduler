@@ -35,7 +35,7 @@ function renderTimeBlocks() {
         <span class="col-2 col-md-1 hour">${textHour}</span>
         <textarea class="col-8 col-md-10 description">${getEvent(i)}</textarea>
         <div class="col-2 col-md-1 saveBtn" title="Save">
-          <i class="bi bi-check-square"></i>
+          <i class="fas fa-save"></i>
         </div>
       </div>
     `);

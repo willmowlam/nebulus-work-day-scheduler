@@ -4,7 +4,7 @@
 
 A simple jQuery calendar application that allows a user to save events for each hour of the day.
 
-This application uses the [Day.js](https://day.js.org/) library for date-time manipulation plus [Bootstrap](https://getbootstrap.com/) for layout and icons.
+This application uses the [Day.js](https://day.js.org/) library for date-time manipulation plus [Bootstrap](https://getbootstrap.com/) for layout and [Font Awesome](https://fontawesome.com/) for icons.
 
 The application is deployed to the following URL:
 
