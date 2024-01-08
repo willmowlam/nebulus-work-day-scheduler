@@ -1,6 +1,6 @@
 // Set start and end work hours as integers (9 = 9am, 17 = 5pm)
-const intStartTime = 0;
-const intEndTime = 23;
+const intStartTime = 9;
+const intEndTime = 17;
 
 // Get date/time now
 const now = dayjs();
