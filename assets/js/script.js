@@ -141,6 +141,21 @@ $(function() {
       }, 300); // Match the transition speed in .saved
     }, 150);
 
+    // Create feedback and markup
+    let feedback = $(`
+      <div class="text-center mt-2">
+        <p class="d-inline">Appointment added to <pre class="d-inline" style="color: red">localstorage</pre> <i class="fas fa-check" style="color: green"></i></p>
+      </div>
+    `);
+
+    // Add feedback to page
+    $("#time-blocks").prepend(feedback);
+
+    // Remove feedback after a delay
+    setTimeout(function() {
+      feedback.remove();
+    }, 3000);
+
   });
 
 });
