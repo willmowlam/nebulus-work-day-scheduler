@@ -72,6 +72,8 @@ header {
   color: white;
   cursor: pointer;
   border-top: 1px solid white;
+  font-size: 20px;
+  padding: 25px;
 }
 
 .saveBtn:hover {
@@ -101,5 +103,12 @@ header {
   .saveBtn {
     border-top-right-radius: unset;
     border-bottom-right-radius: unset;
+  }
+}
+
+/* Keep icon positioned correctly on very narrow display */
+@media only screen and (max-width: 333px) {
+  .saveBtn {
+    padding: 20px 0px;    
   }
 }
