@@ -83,6 +83,17 @@ header {
   display: block;
 }
 
+/* Show the event is being saved */
+.saving {
+  background-color: rgb(255, 255, 255, 0.5);
+}
+
+/* Revert to normal background via transition */
+.saved {
+ transition: background-color 0.3s ease-out; /* This should match the speed in the timeout function */
+}
+
+/* Remove rounded corners on narrow displays */
 @media only screen and (max-width: 575px) {
   .time-block {
     border-radius: unset;

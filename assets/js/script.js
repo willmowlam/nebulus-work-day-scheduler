@@ -116,17 +116,33 @@ $(function() {
   // Listen for save button click
   $("#time-blocks").on("click", ".saveBtn", function() {
 
+    // Target the time block textarea element
+    const textareaEl = $(this).siblings(".description");
+
     // Get hour from parent id eg "hour-12"
     let h = $(this).parent().attr("id");
 
     // Get the value of the textarea in the row
-    let d = $(this).siblings(".description").val();
+    let d = textareaEl.val();
 
     // Extract the numerical part from the hour using regex
     h = h.replace(/\D/g, '');
 
+    // Add class to show the event is being saved
+    textareaEl.addClass("saving");   
+
     // Save event
     setEvent(h, d);
+
+    // Revert textarea to normal background with transition and a little delay
+    setTimeout(function() {
+      textareaEl.removeClass("saving"); 
+      textareaEl.addClass("saved");
+      setTimeout(function() { 
+        textareaEl.removeClass("saved");
+      }, 300); // Match the transition speed in .saved
+    }, 150);
+
   });
 
 });
